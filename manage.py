@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
+# python manage.py runserver
+# python manage.py startapp blog
+# python manage.py makemigrations
+# python manage.py migrate
+# python manage.py createsuperuser
 import os
 import sys
 
