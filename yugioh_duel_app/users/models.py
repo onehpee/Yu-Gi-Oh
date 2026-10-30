@@ -46,7 +46,7 @@ class NewUser(AbstractUser, PermissionsMixin):
     last_name = models.CharField(max_length=100)
     username = models.CharField(max_length=100, unique=True)
     email = models.EmailField(max_length=100, unique=True,
-                              error_messages={'unique': 'A user with that email already exists.'})
+                              error_messages={'unique': 'A user with that email already existss.'})
     password = models.CharField(max_length=100)
     start_date = models.DateTimeField(default=timezone.now)
     # Allows this user to access the admin site.
