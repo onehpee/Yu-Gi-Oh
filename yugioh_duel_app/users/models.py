@@ -32,7 +32,7 @@ class CustomAccountManager(BaseUserManager):
         if not password:
             raise ValueError('Users must have a password')
 
-        email = self.normalize_username(email)
+        email = self.normalize_email(email)
         user = self.model(username=username, email=email, first_name=first_name, **other_fields)
         user.set_password(password)
         user.save()
@@ -55,6 +55,8 @@ class NewUser(AbstractUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
 
     objects = CustomAccountManager()
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username','first_name', 'last_name']
 
     def __str__(self):
         return self.username
